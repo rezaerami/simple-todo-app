@@ -6,6 +6,7 @@ export const StyledBoardsWrapper = Styled.div`
   height: 100vh;
 `;
 
+
 export const StyledBoardsListWrapper = Styled.div`
   height: 100%;
   background-color: ${color('gray', 'dark')};

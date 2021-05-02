@@ -12,9 +12,9 @@ import {
   StyledCancelButton
 } from './styles'
 
-const BoardDetailsForm = ({className, onSubmit, onCancel}) => {
-  const [title, setTitle] = useState('')
-  const [description, setDescription] = useState('')
+const BoardDetailsForm = ({className, onSubmit, onCancel, board}) => {
+  const [title, setTitle] = useState(board ? board.title : '')
+  const [description, setDescription] = useState(board ? board.description : '')
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -26,7 +26,7 @@ const BoardDetailsForm = ({className, onSubmit, onCancel}) => {
 
   return (
     <StyledBoardDetailsForm className={className} onSubmit={handleSubmit}>
-      <StyledTitle>{MESSAGES.ADD_BOARD}</StyledTitle>
+      <StyledTitle>{board ? MESSAGES.EDIT_BOARD : MESSAGES.ADD_BOARD}</StyledTitle>
       <Input
         type="text"
         placeholder={MESSAGES.TITLE}
@@ -55,6 +55,7 @@ BoardDetailsForm.propTypes = {
   className: PropTypes.string,
   onSubmit: PropTypes.func.isRequired,
   onCancel: PropTypes.oneOfType([PropTypes.func, PropTypes.bool]),
+  board: PropTypes.object,
 }
 BoardDetailsForm.defaultProps = {
   className: '',

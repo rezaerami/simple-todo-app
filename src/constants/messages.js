@@ -5,6 +5,7 @@ const MESSAGES = {
   DESCRIPTION: 'Description',
   SUBMIT: 'Submit',
   CANCEL: 'Cancel',
+  EDIT_BOARD: 'Edit Board',
 };
 
 export default MESSAGES;

@@ -11,6 +11,7 @@ import {
 } from './styles';
 
 const Boards = ({ className, boardsList }) => {
+
   return (
     <StyledBoardsWrapper className={className}>
       <StyledBoardsListWrapper>
