@@ -7,7 +7,8 @@ Click [Here](http://ws-simple-todo-app.surge.sh) to see the demo.
 
 ## Directory Structure
 
-##Components
+### Components
+
 instead of categorizing components in two categories of dumb and smart components, or `components` and `containers`, we use three categories
 
 - *Globals*: contains dumb components such as UI components.
@@ -15,26 +16,32 @@ instead of categorizing components in two categories of dumb and smart component
 - *Pages*: fully smart components, they can not be wrapped in other components rather than the router.
 
 
-##Config
+### Config
+
 Contains the configuration of the app, such as middlewares, store, and anything that should be integrated with react to configure the project.
 
-##Constants
+### Constants
+
 Any constants such as API statuses, messages, theme constants goes to the constants directory.
 
-##Ducks
+### Ducks
+
 the ducks directory provides the logic of the application.
 all actions, reducers, and anything related to the data flow go here, each directory in ducks provides a feature.
 also, side-effects such as saga go here, so the layer of the logic can be separated
 
 
-##Helpers
+### Helpers
+
 contains the helper functions grouped based on their functionality.
 the approach to developing the helper functions is single-responsibility, so they must have only one thing to do.
 
-##Resources
+### Resources
+
 contains any resources such as images, fonts, icons, and any other asset
 
 ## Available Scripts
+
 In the project directory, you can run:
 
 ### `yarn`
