@@ -1,5 +1,13 @@
 import React from 'react'
+import {BrowserRouter} from "react-router-dom";
 
-const App = () => <div>app dummy component</div>
+import Router from "components/Common/Router";
+
+
+const App = () => (
+  <BrowserRouter>
+    <Router />
+  </BrowserRouter>
+)
 
 export default App
