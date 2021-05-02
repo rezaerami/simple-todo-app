@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 
 import {columnsActions, columnsSelectors} from "ducks";
 import MESSAGES from "constants/messages"
+import Column from "components/Common/Column";
 
 import {PlusIcon} from "resources/icons";
 import {
@@ -64,7 +65,7 @@ const BoardContent = ({className, boardColumns, board, createColumn}) => {
       </StyledBoardTitle>
       <StyledBoardColumnsWrapper>
         {!!boardColumns.length && boardColumns.map(column => (
-          <span>{column.title}</span>
+          <Column column={column} key={column.id}/>
         ))}
 
         {isAddColumnFormVisible && (
