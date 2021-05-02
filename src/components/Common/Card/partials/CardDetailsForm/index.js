@@ -14,19 +14,29 @@ import {
   StyledTextarea,
 } from './styles'
 
-const CardDetailsForm = ({className, onSubmit, onCancel}) => {
-  const [title, setTitle] = useState('')
-  const [description, setDescription] = useState('')
-  const [priority, setPriority] = useState(GLOBALS.CARD_PRIORITIES.MEDIUM)
+const CardDetailsForm = ({className, onSubmit, onCancel, card, boardColumns}) => {
+  const [title, setTitle] = useState(card ? card.title : '')
+  const [description, setDescription] = useState(card ? card.description : '')
+  const [priority, setPriority] = useState(card ? card.priority : GLOBALS.CARD_PRIORITIES.MEDIUM)
+  const [columnId, setColumnId] = useState(card ? card.columnId : null)
 
   const handleSubmit = e => {
     e.preventDefault();
 
-    onSubmit({
+    const payload = {
       title,
       description,
       priority,
-    })
+    };
+    /**
+     * if card has column id,
+     * it means that card is already created and user is editing it
+     */
+    if(columnId){
+      payload.columnId = columnId
+    }
+
+    onSubmit(payload)
   }
 
   return (
@@ -49,6 +59,21 @@ const CardDetailsForm = ({className, onSubmit, onCancel}) => {
         ))}
       </StyledSelect>
 
+      {!!boardColumns.length && (
+        /**
+         * show columns dropdown only on edit mote
+         */
+        <StyledSelect
+          value={columnId}
+          onChange={e => setColumnId(e.target.value)}
+          required
+        >
+          {boardColumns.map(column => (
+            <option key={column.id} value={column.id}>{column.title}</option>
+          ))}
+        </StyledSelect>
+      )}
+
       <StyledTextarea
         type="text"
         placeholder={MESSAGES.DESCRIPTION}
@@ -68,9 +93,11 @@ CardDetailsForm.propTypes = {
   className: PropTypes.string,
   onSubmit: PropTypes.func.isRequired,
   onCancel: PropTypes.func.isRequired,
+  boardColumns: PropTypes.array,
 }
 CardDetailsForm.defaultProps = {
   className: '',
+  boardColumns: [],
 }
 
 export default CardDetailsForm
