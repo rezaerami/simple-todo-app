@@ -1,5 +1,5 @@
 import Styled from 'styled-components'
-import {color} from "helpers";
+import {color, makeRgba} from "helpers";
 
 export const StyledColumn = Styled.div`
   background-color: ${color('gray', 'light')};
@@ -27,4 +27,11 @@ export const StyledTitle = Styled.div`
       display: block;
     }
   }
+`;
+
+export const StyledColumnContentWrapper = Styled.div`
+  background-color: ${makeRgba(0.2, 'neutral', 'light')};
+  flex: 1;
+  padding: 0.4rem;
+  margin-top: 0.4rem;
 `;

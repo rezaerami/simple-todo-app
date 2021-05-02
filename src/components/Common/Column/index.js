@@ -5,12 +5,13 @@ import {connect} from 'react-redux';
 import {columnsActions} from "ducks";
 import {Button} from "components/Globals";
 
-import {ColumnDetailsForm} from "./partials";
+import {ColumnCards, ColumnDetailsForm} from "./partials";
 import {PenIcon} from "resources/icons";
 import {
   StyledColumn,
   StyledTitleWrapper,
   StyledTitle,
+  StyledColumnContentWrapper
 } from './styles'
 
 const Column = ({className, column, updateColumn}) => {
@@ -68,6 +69,9 @@ const Column = ({className, column, updateColumn}) => {
           />
         )}
       </StyledTitleWrapper>
+      <StyledColumnContentWrapper>
+        <ColumnCards columnId={id} />
+      </StyledColumnContentWrapper>
     </StyledColumn>
   )
 }
