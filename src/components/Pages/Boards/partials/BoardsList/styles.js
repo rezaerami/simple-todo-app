@@ -1,5 +1,6 @@
 import Styled from 'styled-components'
-import {color} from "helpers";
+import {Button} from "components/Globals";
+import {color, makeRgba} from "helpers";
 
 export const StyledBoardsList = Styled.div`
   > * {
@@ -14,4 +15,11 @@ export const StyledTitle = Styled.h3`
   font-size: 1.4rem;
   font-weight: normal;
   color: ${color('neutral', 'light')};
+`
+
+export const StyledButton = Styled(Button)`
+  background-color: ${makeRgba(0.1,  'neutral', 'light')};
+  color: ${color('neutral', 'light')};
+  font-size: 1rem;
+  width: 100%;
 `

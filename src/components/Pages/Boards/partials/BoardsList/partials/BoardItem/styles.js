@@ -8,5 +8,8 @@ export const StyledBoardItem = Styled.div`
     justify-content: space-between;
     text-decoration: none;
     color: ${color('neutral', 'light')};
+    button {
+      color: inherit;
+    }
   }
 `;
