@@ -10,37 +10,37 @@ export const StyledBoardTitle = Styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.8rem;
-  border-radius: 0.5rem;
+  padding: 1.4rem;
+  border-radius: 0.9rem;
 `;
 
 export const StyledTitle = Styled.h2`
   margin: 0;
-  font-size: 1.4rem;
+  font-size: 2.5rem;
   font-weight: normal;
 `;
 
 export const StyledButton = Styled(Button)`
   background-color: ${color('blue', 'main')};
   color: ${color('neutral', 'light')};
-  font-size: 0.6rem;
+  font-size: 1.1rem;
 `;
 
 export const StyledBoardColumnsWrapper = Styled.div`
   display: flex;
   overflow-y: auto;
-  margin-top: 1rem;
+  margin-top: 1.8rem;
   > * {
-    width: 15rem;
+    width: 27.0rem;
     flex: 0 0 auto;
     &:not(:last-child){
-      margin-right: 2rem;
+      margin-right: 3.6rem;
     }
   }
 `;
 
 export const StyledColumnDetailsForm = Styled(ColumnDetailsForm)`
-  padding: 1rem;
-  border-radius: 0.4rem;
+  padding: 1.8rem;
+  border-radius: 0.7rem;
   background-color: ${color('gray', 'light')};
 `;

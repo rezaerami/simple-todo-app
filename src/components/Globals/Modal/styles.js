@@ -22,13 +22,13 @@ export const StyledBackDrop = Styled(StyledModal)``;
 
 export const StyledModalContentWrapper = Styled.div`
   max-width: 100%;
-  width: 30rem;
+  width: 54.0rem;
   position: relative;
   margin: 0 auto;
-  top: 10rem;
-  border-radius: 0.5rem;
+  top: 18.0rem;
+  border-radius: 0.9rem;
   background-color: ${color('neutral', 'light')};
-  padding: 1rem;
+  padding: 1.8rem;
   z-index: 10002
 `;
 

@@ -8,13 +8,13 @@ export const StyledBoardDetailsForm = Styled.form`
   max-width: 100%;
   > * {
     &:not(:last-child){
-      margin-bottom: 1rem;
+      margin-bottom: 1.8rem;
     }
   }
 `;
 
 export const StyledTitle = Styled.h3`
-  font-size: 0.8rem;
+  font-size: 1.4rem;
   color: ${color('neutral', 'light')};
 `;
 
@@ -33,5 +33,5 @@ export const StyledSubmitButton = Styled(Button)`
 export const StyledCancelButton = Styled(Button)`
   color: ${color('neutral', 'light')};
   background-color: ${makeRgba(0.1, "neutral", "light")};
-  margin-left: 1rem;
+  margin-left: 1.8rem;
 `;
