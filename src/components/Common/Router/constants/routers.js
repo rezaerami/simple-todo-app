@@ -1,4 +1,4 @@
-import {Foo, Bar} from 'components/Pages';
+import {Boards, Foo, Bar} from 'components/Pages';
 
 import routes from './routes';
 
@@ -12,6 +12,11 @@ const routers = [
     path: routes.bar,
     exact: true,
     component: Bar,
+  },
+  {
+    path: routes.boards,
+    exact: true,
+    component: Boards,
   },
 ];
 
