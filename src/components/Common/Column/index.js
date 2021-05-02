@@ -12,7 +12,7 @@ import {
   StyledTitleWrapper,
   StyledTitle,
   StyledColumnContentWrapper
-} from 'components/Common/Column/styles'
+} from './styles'
 
 const Column = ({className, column, updateColumn}) => {
   const {title, description, id, boardId} = column;

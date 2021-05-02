@@ -4,10 +4,13 @@ import {connect} from 'react-redux';
 
 import {cardsActions, cardsSelectors} from "ducks";
 import MESSAGES from "constants/messages";
+import GLOBALS from "constants/globals";
+
+import Card from "components/Common/Card";
 import {CardDetailsForm} from "components/Common/Card/partials";
 
-import {StyledColumnCards, StyledButton} from 'components/Common/Column/partials/ColumnCards/styles'
 import {PlusIcon} from "resources/icons";
+import {StyledColumnCards, StyledButton} from './styles'
 
 const ColumnCards = ({className, columnId, columnCards, createCard}) => {
   const [isAddCardFormVisible, setIsAddCardFormVisible] = useState(false)
@@ -37,9 +40,25 @@ const ColumnCards = ({className, columnId, columnCards, createCard}) => {
     setIsAddCardFormVisible(false)
   }
 
+  /**
+   * group cards based on priorities
+   * @type {{}}
+   */
+  const sortedCards = Object.keys(GLOBALS.CARD_PRIORITIES).reduce((result, key) => {
+    const filteredCards = columnCards.filter(card => card.priority === GLOBALS.CARD_PRIORITIES[key]);
+    if (filteredCards.length) {
+      result[key] = filteredCards;
+    }
+    return result
+  }, {});
+
   return (
     <StyledColumnCards className={className}>
-      {columnCards.map(card => <span>{card.title}</span>)}
+      {Object.keys(sortedCards).map(key => (
+        <div className={key} key={key}>
+          {sortedCards[key].map(card => <Card card={card} key={card.id} />)}
+        </div>
+      ))}
 
       {!isAddCardFormVisible && (
         <StyledButton
