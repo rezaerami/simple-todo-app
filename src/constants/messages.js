@@ -9,6 +9,7 @@ const MESSAGES = {
   SELECT_BOARD: 'Select Board',
   BOARD_NOT_FOUND: 'Board Not found',
   ADD_COLUMN: 'Add Column',
+  ADD_CARD: 'Add Card',
 };
 
 export default MESSAGES;

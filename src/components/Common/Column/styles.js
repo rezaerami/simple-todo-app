@@ -28,3 +28,5 @@ export const StyledTitle = Styled.div`
     }
   }
 `;
+
+export const StyledColumnContentWrapper = Styled.div``;
