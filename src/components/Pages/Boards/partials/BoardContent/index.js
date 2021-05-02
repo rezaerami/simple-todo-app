@@ -11,20 +11,68 @@ import {
   StyledBoardTitle,
   StyledBoardColumnsWrapper,
   StyledTitle,
+  StyledButton,
+  StyledColumnDetailsForm,
 } from './styles';
 
-const BoardContent = ({className, boardColumns, board}) => {
+const BoardContent = ({className, boardColumns, board, createColumn}) => {
   const {title} = board;
+  const [isAddColumnFormVisible, setIsAddColumnFormVisible] = useState(false);
+
+  useEffect(() => {
+    setIsAddColumnFormVisible(!boardColumns.length)
+  }, [boardColumns])
+
+
+  const handleAddColumnSubmit = payload => {
+    createColumn({
+      boardId: board.id,
+      ...payload
+    });
+    handleAddColumnFormClose();
+  }
+
+  const handleAddColumnFormOpen = e => {
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+    setIsAddColumnFormVisible(true);
+  }
+
+  const handleAddColumnFormClose = e => {
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+    setIsAddColumnFormVisible(false)
+  }
 
   return (
     <StyledBoardContent className={className}>
       <StyledBoardTitle>
         <StyledTitle>{title}</StyledTitle>
+        {!isAddColumnFormVisible && (
+          <StyledButton
+            type="button"
+            onClick={handleAddColumnFormOpen}
+          >
+            <span>{MESSAGES.ADD_COLUMN}</span>
+            <PlusIcon width={16}/>
+          </StyledButton>
+        )}
       </StyledBoardTitle>
       <StyledBoardColumnsWrapper>
         {!!boardColumns.length && boardColumns.map(column => (
           <span>{column.title}</span>
         ))}
+
+        {isAddColumnFormVisible && (
+          <StyledColumnDetailsForm
+            onSubmit={handleAddColumnSubmit}
+            onCancel={boardColumns.length ? handleAddColumnFormClose : false}
+          />
+        )}
       </StyledBoardColumnsWrapper>
     </StyledBoardContent>
   )

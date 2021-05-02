@@ -7,7 +7,7 @@ const MESSAGES = {
   CANCEL: 'Cancel',
   EDIT_BOARD: 'Edit Board',
   SELECT_BOARD: 'Select Board',
-  BOARD_NOT_FOUND: 'Board Not Found',
+  BOARD_NOT_FOUND: 'Board Not found',
   ADD_COLUMN: 'Add Column',
 };
 
