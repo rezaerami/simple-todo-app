@@ -6,6 +6,16 @@ export const StyledBoardsWrapper = Styled.div`
   height: 100vh;
 `;
 
+export const StyledMessage = Styled.div`
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: ${color('gray', 'light')};
+  font-size: 2.4rem;
+  font-weight: bold;
+`;
 
 export const StyledBoardsListWrapper = Styled.div`
   height: 100%;
@@ -13,4 +23,9 @@ export const StyledBoardsListWrapper = Styled.div`
   padding: 1rem;
   width: 18rem;
   max-width: 100%;
+`;
+
+export const StyledBoardContentWrapper = Styled.div`
+  width: calc(100% - 18rem);
+  padding: 1rem;
 `;
