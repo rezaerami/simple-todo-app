@@ -12,9 +12,9 @@ import {
   StyledCancelButton,
 } from './styles'
 
-const ColumnDetailsForm = ({className, onSubmit, onCancel}) => {
-  const [title, setTitle] = useState('')
-  const [description, setDescription] = useState( '')
+const ColumnDetailsForm = ({className, onSubmit, onCancel, column}) => {
+  const [title, setTitle] = useState(column ? column.title : '')
+  const [description, setDescription] = useState(column ? column.description : '')
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -55,6 +55,7 @@ ColumnDetailsForm.propTypes = {
   className: PropTypes.string,
   onSubmit: PropTypes.func.isRequired,
   onCancel: PropTypes.oneOfType([PropTypes.func, PropTypes.bool]),
+  column: PropTypes.object,
 }
 ColumnDetailsForm.defaultProps = {
   className: '',
