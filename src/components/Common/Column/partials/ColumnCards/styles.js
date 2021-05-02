@@ -6,6 +6,6 @@ export const StyledColumnCards = Styled.div``;
 
 export const StyledButton = Styled(Button)`
   width: 100%;
-  border: solid 0.1rem ${color('gray', 'main')};
+  border: solid 0.2rem ${color('gray', 'main')};
   justify-content: center;
 `;

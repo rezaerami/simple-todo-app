@@ -9,30 +9,30 @@ export const StyledButtonsWrapper = Styled.div``;
 export const StyledInput = Styled(Input)`
   background: none;
   padding: 0;
-  padding-bottom: 0.4rem;
-  margin-bottom: 1rem;
-  font-size: 1rem;
-  border-bottom: solid 0.1rem ${color('neutral', 'main')};
+  padding-bottom: 0.7rem;
+  margin-bottom: 1.8rem;
+  font-size: 1.8rem;
+  border-bottom: solid 0.2rem ${color('neutral', 'main')};
 `;
 
 export const StyledTextarea = Styled(Textarea)`
   background: none;
   padding: 0;
-  padding-bottom: 0.4rem;
-  margin-bottom: 0.4rem;
-  font-size: 0.8rem;
-  border-bottom: solid 0.1rem ${color('neutral', 'main')};
+  padding-bottom: 0.7rem;
+  margin-bottom: 0.7rem;
+  font-size: 1.4rem;
+  border-bottom: solid 0.2rem ${color('neutral', 'main')};
 `;
 
 export const StyledSelect = Styled(Select)`
   background: none;
   padding: 0;
-  padding-bottom: 0.4rem;
-  margin-bottom: 0.4rem;
-  font-size: 0.8rem;
+  padding-bottom: 0.7rem;
+  margin-bottom: 0.7rem;
+  font-size: 1.4rem;
   border: none;
-  margin-bottom: 1rem;
-  border-bottom: solid 0.1rem ${color('neutral', 'main')};
+  margin-bottom: 1.8rem;
+  border-bottom: solid 0.2rem ${color('neutral', 'main')};
 `;
 
 export const StyledSubmitButton = Styled(Button)`
@@ -43,5 +43,5 @@ export const StyledSubmitButton = Styled(Button)`
 export const StyledCancelButton = Styled(Button)`
   color: ${color('neutral', 'light')};
   background-color: ${color("orange", "main")};
-  margin-left: 1rem;
+  margin-left: 1.8rem;
 `;

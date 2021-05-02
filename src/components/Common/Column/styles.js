@@ -3,8 +3,8 @@ import {color, makeRgba} from "helpers";
 
 export const StyledColumn = Styled.div`
   background-color: ${color('gray', 'light')};
-  border-radius: 0.4rem;
-  padding: 1rem;
+  border-radius: 0.7rem;
+  padding: 1.8rem;
   display: flex;
   flex-direction: column;
   >  {
@@ -21,7 +21,7 @@ export const StyledTitle = Styled.div`
   justify-content: space-between;
   h3 {
     margin: 0;
-    font-size: 1rem;
+    font-size: 1.8rem;
     font-weight: normal;
     > * {
       display: block;
@@ -32,6 +32,6 @@ export const StyledTitle = Styled.div`
 export const StyledColumnContentWrapper = Styled.div`
   background-color: ${makeRgba(0.2, 'neutral', 'light')};
   flex: 1;
-  padding: 0.4rem;
-  margin-top: 0.4rem;
+  padding: 0.7rem;
+  margin-top: 0.7rem;
 `;

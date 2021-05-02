@@ -13,19 +13,19 @@ export const StyledMessage = Styled.div`
   justify-content: center;
   text-align: center;
   color: ${color('gray', 'light')};
-  font-size: 2.4rem;
+  font-size: 4.3rem;
   font-weight: bold;
 `;
 
 export const StyledBoardsListWrapper = Styled.div`
   height: 100%;
   background-color: ${color('gray', 'dark')};
-  padding: 1rem;
-  width: 18rem;
+  padding: 1.8rem;
+  width: 32.4rem;
   max-width: 100%;
 `;
 
 export const StyledBoardContentWrapper = Styled.div`
-  width: calc(100% - 18rem);
-  padding: 1rem;
+  width: calc(100% - 32.4rem);
+  padding: 1.8rem;
 `;
