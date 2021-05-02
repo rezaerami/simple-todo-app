@@ -5,14 +5,14 @@ import {color, makeRgba} from "helpers";
 export const StyledBoardsList = Styled.div`
   > * {
     &:not(:last-child){
-      margin-bottom: 1rem;
+      margin-bottom: 1.8rem;
     }
   }
 `;
 
 export const StyledTitle = Styled.h3`
   margin-top: 0;
-  font-size: 1.4rem;
+  font-size: 2.5rem;
   font-weight: normal;
   color: ${color('neutral', 'light')};
 `
@@ -20,6 +20,6 @@ export const StyledTitle = Styled.h3`
 export const StyledButton = Styled(Button)`
   background-color: ${makeRgba(0.1,  'neutral', 'light')};
   color: ${color('neutral', 'light')};
-  font-size: 1rem;
+  font-size: 1.8rem;
   width: 100%;
 `
